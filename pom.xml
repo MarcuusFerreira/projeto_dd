@@ -3,4 +3,36 @@
   <groupId>projeto_dd</groupId>
   <artifactId>projeto_dd</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-</project>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+   <dependencies>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.38</version>
+    </dependency>
+    
+    <dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>8.0.17</version>
+	</dependency>
+	
+	<!-- Dependência para funcionar o FormLayout -->
+	<dependency>
+	    <groupId>com.jgoodies</groupId>
+	    <artifactId>jgoodies-common</artifactId>
+	    <version>1.8.1</version>
+	</dependency>
+	
+	<!-- Dependência para componente de seleção de datas -->
+	<dependency>
+		<groupId>com.github.lgooddatepicker</groupId>
+		<artifactId>LGoodDatePicker</artifactId>
+		<version>10.3.1</version>
+	</dependency>
+  </dependencies>
+</project> 	
