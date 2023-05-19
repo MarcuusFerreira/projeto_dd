@@ -2,6 +2,8 @@ package view;
 
 import java.awt.Component;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 import javax.swing.JButton;
@@ -59,6 +61,7 @@ public class TelaCadastroEndereco extends JFrame {
 		setTitle("Cadastro de Endereço");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 299);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -138,5 +141,10 @@ public class TelaCadastroEndereco extends JFrame {
 		
 		JButton btnSalvar = new JButton("Salvar");
 		contentPane.add(btnSalvar, "1, 18, 4, 1, default, fill");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 	}
 }
