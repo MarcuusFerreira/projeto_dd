@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -19,7 +20,10 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.FormSpecs;
 import com.jgoodies.forms.layout.RowSpec;
-import javax.swing.JFormattedTextField;
+
+import controller.EnderecoController;
+import model.entity.Endereco;
+import model.exception.CampoInvalidoException;
 
 public class TelaCadastroEndereco extends JFrame {
 
@@ -144,6 +148,29 @@ public class TelaCadastroEndereco extends JFrame {
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				Endereco endereco = new Endereco();
+				
+				String cepInformado = "";
+				
+				try {
+					cepInformado = (String) mascaraCep.stringToValue(ftxCep.getText());
+				} catch (ParseException e1) {
+					JOptionPane.showMessageDialog(null, "Erro no campo de CEP");
+				}
+				
+				endereco.setCep(cepInformado);
+				endereco.setRua(textRua.getText());
+				endereco.setNumero(textNumero.getText());
+				endereco.setBairro(textBairro.getText());
+				endereco.setCidade(textCidade.getText());
+				endereco.setEstado(textEstado.getText());
+				
+				EnderecoController controller = new EnderecoController();
+				try {
+					controller.inserir(endereco);
+				} catch (CampoInvalidoException e1) {
+					JOptionPane.showMessageDialog(null, "Os seguintes Campos Estão em branco:\n" + e1.getMessage());
+				}
 			}
 		});
 	}
