@@ -45,10 +45,10 @@ public class EnderecoController {
 		validarCamposObrigatorios(enderecoAlterado);
 		return bo.atualizar(enderecoAlterado);
 	}
-	/*
+	
 	public boolean excluir(int id) throws EnderecoInvalidoException {
 		return bo.excluir(id);
-	}*/
+	}
 
 	public Endereco consultarPorCep(String cep) {
 		return bo.consultarPorCep(cep);

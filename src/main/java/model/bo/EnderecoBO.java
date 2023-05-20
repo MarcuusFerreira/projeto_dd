@@ -2,6 +2,7 @@ package model.bo;
 
 import java.util.List;
 
+import model.dao.ClienteDAO;
 import model.dao.EnderecoDAO;
 import model.entity.Endereco;
 import model.exception.EnderecoInvalidoException;
@@ -16,7 +17,7 @@ private EnderecoDAO dao = new EnderecoDAO();
 	public boolean atualizar(Endereco enderecoAlterado){
 		return dao.atualizar(enderecoAlterado);
 	}
-	/*
+	
 	public boolean excluir(int id) throws EnderecoInvalidoException {
 		ClienteDAO clienteDAO = new ClienteDAO();
 		
@@ -25,7 +26,7 @@ private EnderecoDAO dao = new EnderecoDAO();
 		}
 		
 		return dao.excluir(id);
-	}*/
+	}
 	
 	public Endereco consultarPorCep(String cep) {
 		//TODO chamar viaCep
