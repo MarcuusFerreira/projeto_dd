@@ -5,10 +5,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JTable;
 
 public class TelaListagemEnderecos extends JFrame {
 
 	private JPanel contentPane;
+	private JTable tblEnderecos;
 
 	/**
 	 * Launch the application.
@@ -35,6 +37,10 @@ public class TelaListagemEnderecos extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		tblEnderecos = new JTable();
+		tblEnderecos.setBounds(22, 35, 402, 215);
+		contentPane.add(tblEnderecos);
 	}
-
 }
